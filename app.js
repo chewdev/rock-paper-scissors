@@ -82,6 +82,9 @@ function getOwnStylesheet() {
 // Returns total time in ms to be used in rockPaperScissors function setTimeout duration length
 // If animationDuration or animationIterationCount change in css stylesheet, this will automatically update necessary timeout length
 function getRpsAnimationLength(stylesheet) {
+  if (!stylesheet) {
+    return 2100; //If stylesheet undefined, return default
+  }
   let animationDuration;
   let animationIterationCount;
   const cssRulesOrRules = stylesheet.cssRules
@@ -99,7 +102,7 @@ function getRpsAnimationLength(stylesheet) {
         stylesheet.cssRules[i].style.animationIterationCount;
     }
   }
-  const animationDurationMS = Number(animationDuration.slice(0, -1)) * 1000; //convert to ms from seconds
+  let animationDurationMS = Number(animationDuration.slice(0, -1)) * 1000; //convert to ms from seconds
   animationIterationCount = Number(animationIterationCount);
   const totalAnimationTime = animationDurationMS * animationIterationCount;
   return isNaN(totalAnimationTime) ? 2100 : totalAnimationTime; // If calculation ended as NaN, return default value of 2100, else return calculated value
@@ -208,7 +211,10 @@ function rockPaperScissors(playerChoice) {
   // add .rps class to begin fist shake animations
   player.classList.add("rps");
   computer.classList.add("rps");
-
+  // If error caused animation time set to default, try to update animation time
+  if (totalAnimationTime === 2100) {
+    totalAnimationTime = getRpsAnimationLength(getOwnStylesheet());
+  }
   // use setTimeout to delay showing results until animation is complete
   setTimeout(() => {
     // After animation is complete
