@@ -5,7 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <h1>Rock, Paper, Scissors</h1>
+    <h2>Dare to challenge the Computer?</h2>
+    <h3>First to 5 Wins. Choose an attack, you coward!</h3>
+    <div class="player-container">
+      <button class="rock player-choice">✊</button>
+      <button class="paper player-choice">✋</button>
+      <button class="scissors player-choice">✌️</button>
+    </div>
+    <div class="message-container">
+      <h3 class="message"></h3>
+    </div>
+    <div class="game-container">
+      <div class="player-pick-container">
+        <h4>You</h4>
+        <button class="player">✊</button>
+      </div>
+      <div class="comp-pick-container">
+        <h4>Computer</h4>
+        <button class="computer">✊</button>
+      </div>
+    </div>
+    <div class="score"></div>
+  </body>
 </html>

@@ -1,0 +1,123 @@
+body {
+  font-family: "Shadows Into Light", cursive;
+  background: #ddddff;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  margin: 30px;
+}
+
+h1 {
+  font-size: 48px;
+  color: #999999;
+}
+
+h2 {
+  font-size: 36px;
+  color: #666666;
+}
+
+h3 {
+  font-size: 30px;
+  color: #333333;
+}
+
+.player-container {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
+
+.player-pick-container,
+.comp-pick-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score {
+  display: flex;
+  gap: 5%;
+  justify-content: center;
+}
+
+.score div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score div p {
+  margin: 0;
+  font-size: 24px;
+}
+
+button {
+  width: 100px;
+  height: 100px;
+  font-size: 36px;
+  transform: rotate(-90deg);
+  border: none;
+  background-color: inherit;
+}
+
+.player-choice {
+  cursor: pointer;
+}
+
+.player-choice:disabled,
+.player-choice[disabled] {
+  cursor: initial;
+}
+
+@keyframes rockPaperScissors {
+  from {
+    transform: translateY(10px) rotate(-90deg);
+  }
+  to {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+}
+
+.rps {
+  animation-name: rockPaperScissors;
+  animation-duration: 0.333s;
+  animation-iteration-count: 3;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reset {
+  transform: none;
+  font-size: 24px;
+  font-weight: 700;
+  border: 1px solid red;
+  border-radius: 8px;
+  padding: 12px 24px;
+  width: auto;
+  height: auto;
+  color: red;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.3s linear;
+}
+
+.reset:hover {
+  background: red;
+  color: white;
+}
