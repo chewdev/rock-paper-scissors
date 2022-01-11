@@ -109,7 +109,7 @@ function getRpsAnimationLength(stylesheet) {
 }
 
 const ownStylesheet = getOwnStylesheet();
-const totalAnimationTime = getRpsAnimationLength(ownStylesheet);
+let totalAnimationTime = getRpsAnimationLength(ownStylesheet);
 
 // Element that shows animation and players current/last move
 const player = document.querySelector(".player");
