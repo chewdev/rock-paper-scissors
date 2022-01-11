@@ -1,28 +1,41 @@
+html {
+  font-size: 10px;
+}
+
 body {
   font-family: "Shadows Into Light", cursive;
   background: #ddddff;
+  margin: 0;
 }
 
 h1,
 h2,
 h3 {
   text-align: center;
-  margin: 30px;
+  margin: 3rem;
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 4.8rem;
   color: #999999;
+  margin: 2rem;
 }
 
 h2 {
-  font-size: 36px;
+  font-size: 3.6rem;
   color: #666666;
+  margin: 0;
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 2.8rem;
   color: #333333;
+  margin: 2rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+  margin: 0;
 }
 
 .player-container {
@@ -34,7 +47,7 @@ h3 {
 .game-container {
   display: flex;
   justify-content: center;
-  gap: 10%;
+  gap: 2rem;
 }
 
 .player-pick-container,
@@ -43,12 +56,15 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px solid #333333;
+  border-radius: 0.8rem;
 }
 
 .score {
   display: flex;
   gap: 5%;
   justify-content: center;
+  margin-top: 2rem;
 }
 
 .score div {
@@ -60,13 +76,13 @@ h3 {
 
 .score div p {
   margin: 0;
-  font-size: 24px;
+  font-size: 2.4rem;
 }
 
 button {
-  width: 100px;
-  height: 100px;
-  font-size: 36px;
+  width: 10rem;
+  height: 10rem;
+  font-size: 3.6rem;
   transform: rotate(-90deg);
   border: none;
   background-color: inherit;
@@ -74,6 +90,11 @@ button {
 
 .player-choice {
   cursor: pointer;
+  transition: transform 0.2s linear;
+}
+
+.player-choice:hover {
+  transform: rotate(-90deg) translateX(3px) translateY(3px);
 }
 
 .player-choice:disabled,
@@ -81,12 +102,17 @@ button {
   cursor: initial;
 }
 
+.player-choice:disabled:hover,
+.player-choice[disabled]:hover {
+  transform: rotate(-90deg);
+}
+
 @keyframes rockPaperScissors {
   from {
-    transform: translateY(10px) rotate(-90deg);
+    transform: translateY(1rem) rotate(-90deg);
   }
   to {
-    transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-1rem) rotate(-45deg);
   }
 }
 
@@ -104,11 +130,12 @@ button {
 
 .reset {
   transform: none;
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 700;
   border: 1px solid red;
-  border-radius: 8px;
-  padding: 12px 24px;
+  border-radius: 0.8rem;
+  padding: 1.2rem 2.4rem;
+  margin-bottom: 2rem;
   width: auto;
   height: auto;
   color: red;
@@ -120,4 +147,10 @@ button {
 .reset:hover {
   background: red;
   color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 7px;
+  }
 }
